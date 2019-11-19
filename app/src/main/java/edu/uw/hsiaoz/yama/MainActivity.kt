@@ -109,6 +109,7 @@ class SmsReceiver: BroadcastReceiver() {
                     .setContentText(msg.displayMessageBody)
                     .setContentIntent(pendingIntent)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setStyle(NotificationCompat.BigTextStyle())
                     .setAutoCancel(true)
                     .addAction(R.drawable.ic_message_black_24dp, "View", pendingIntent)
                     .addAction(R.drawable.ic_message_black_24dp, "Reply", p2)
