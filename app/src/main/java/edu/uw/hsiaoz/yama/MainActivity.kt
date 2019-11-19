@@ -102,6 +102,7 @@ class SmsReceiver: BroadcastReceiver() {
             val inte = Intent().setClass(context, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             val pendingIntent: PendingIntent = PendingIntent.getActivity(context, 0, inte, 0)
             val i2 = Intent().setClass(context, ComposeMessageActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            i2.putExtra("contact", msg.originatingAddress)
             val p2 = PendingIntent.getActivity(context, 0, i2, 0)
             var mBuilder = NotificationCompat.Builder(context, "0")
                     .setSmallIcon(R.drawable.ic_message_black_24dp)

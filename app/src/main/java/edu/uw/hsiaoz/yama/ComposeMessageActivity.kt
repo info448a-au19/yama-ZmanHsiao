@@ -33,6 +33,10 @@ class ComposeMessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compose_message)
 
+        if (intent.hasExtra("contact")) {
+            but.text = intent.getStringExtra("contact")
+        }
+
         but.setOnClickListener {
             pickContact()
         }
